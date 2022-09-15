@@ -32,6 +32,7 @@ namespace MethodsWithLoopsAndConditionals
             switch (choice)
             {
                 case "1":
+                    InRange();
                     break;
                 case "2":
                     MultiplyNumber();
@@ -55,6 +56,28 @@ namespace MethodsWithLoopsAndConditionals
             }
         }
 
+        // In Range //
+
+        public static void InRange()
+        {
+            double num1 = -10;
+            double num2 = 10;
+
+            WriteLine();
+            Write("Plese Enter a Number: ");
+            double num3;
+            bool parseResults;
+            parseResults = double.TryParse(ReadLine(), out num3);
+            WriteLine();
+            var results = (num3 >= num1 && num3 <= num2) ? $"{num3} is between {num1} & {num2}!" : $"{num3} is outside of {num1} & {num2}!";
+            WriteLine(results);
+            WriteLine();
+            Write("Press Enter to Continue: ");
+            ReadKey();
+            Start();
+        }
+
+
         public static void MultiplyNumber()
         {
             WriteLine();
@@ -74,7 +97,10 @@ namespace MethodsWithLoopsAndConditionals
                 Thread.Sleep(250);
             }
             WriteLine();
+            WriteLine("Wow! Thats some fast math! ");
+            WriteLine();
             Write("Press Enter to Continue: ");
+
             ReadKey();
             Start();
         }

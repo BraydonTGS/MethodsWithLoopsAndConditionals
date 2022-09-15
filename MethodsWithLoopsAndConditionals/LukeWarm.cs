@@ -181,7 +181,6 @@ namespace MethodsWithLoopsAndConditionals
             string results = (num1 >= 18) ? "You are old enought to vote!!!" : "You are not old enough to vote";
             WriteLine(results);
             WriteLine();
-            WriteLine("Wow! Thats some fast math! ");
             Write("Press Enter to Continue: ");
             ReadKey();
             Start();
