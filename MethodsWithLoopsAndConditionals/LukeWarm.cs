@@ -43,6 +43,7 @@ namespace MethodsWithLoopsAndConditionals
                     PrintByThree();
                     break;
                 case "3":
+                    EqualOrNot();
                     break;
                 case "4":
                     break;
@@ -74,7 +75,7 @@ namespace MethodsWithLoopsAndConditionals
             for (var i = 1000; i >= -1000; i--)
             {
                 WriteLine($"{i} I am getting smaller!!!");
-                Thread.Sleep(25);
+                Thread.Sleep(20);
             }
             WriteLine();
             WriteLine("This is A LOT of Numbers ");
@@ -89,7 +90,7 @@ namespace MethodsWithLoopsAndConditionals
             for (var i = 3; i <= 999; i += 3)
             {
                 WriteLine($"{i} I am getting bigger!!!");
-                Thread.Sleep(25);
+                Thread.Sleep(20);
             }
             WriteLine();
             WriteLine("This is A LOT of Numbers ");
@@ -97,6 +98,28 @@ namespace MethodsWithLoopsAndConditionals
             Write("Press Enter to Continue: ");
             ReadKey();
             Start();
+        }
+
+        // Equal or Not //
+
+        public static void EqualOrNot()
+        {
+            WriteLine();
+            WriteLine("Plese Enter two numbers");
+            WriteLine();
+            Write("Enter Number 1: ");
+            int num1 = int.Parse(ReadLine());
+            WriteLine();
+            Write("Enter Number 2: ");
+            var num2 = int.Parse(ReadLine());
+            WriteLine();
+            string results = (num1 == num2) ? $"{num1} & {num2} are Equal! " : $"{num1} & {num2} are Not Equal!";
+            WriteLine(results);
+            WriteLine();
+            Write("Press Enter to Continue: ");
+            ReadKey();
+            Start();
+
         }
     }
 }
