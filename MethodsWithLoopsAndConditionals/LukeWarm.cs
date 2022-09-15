@@ -23,9 +23,9 @@ namespace MethodsWithLoopsAndConditionals
             WriteLine();
             WriteLine("\t> 1. Print Numbers 1000 to -1000: ");
             WriteLine("\t> 2. Print Numbers 3 to 999 by 3: ");
-            WriteLine("\t> 3. Equal or Not: ");
-            WriteLine("\t> 4. Even or Odd: ");
-            WriteLine("\t> 5. Positive or Negative ");
+            WriteLine("\t> 3. Equal or Not Equal: ");
+            WriteLine("\t> 4. Positive or Negative ");
+            WriteLine("\t> 5. Even or Odd: ");
             WriteLine("\t> 6. Can You Vote? ");
             WriteLine("\t> 7. Go Back ");
             WriteLine("\t> 8. Exit ");
@@ -46,8 +46,10 @@ namespace MethodsWithLoopsAndConditionals
                     EqualOrNot();
                     break;
                 case "4":
+                    PositiveOrNegative();
                     break;
                 case "5":
+                    EvenOrOdd();
                     break;
                 case "6":
                     break;
@@ -69,6 +71,7 @@ namespace MethodsWithLoopsAndConditionals
                     break;
             }
         }
+
         // Numbers 1000 to -1000
         public static void PrintNumbers()
         {
@@ -84,6 +87,7 @@ namespace MethodsWithLoopsAndConditionals
             ReadKey();
             Start();
         }
+
         // Numbers 3 to 999 by 3 //
         public static void PrintByThree()
         {
@@ -101,19 +105,63 @@ namespace MethodsWithLoopsAndConditionals
         }
 
         // Equal or Not //
-
         public static void EqualOrNot()
         {
             WriteLine();
             WriteLine("Plese Enter two numbers");
             WriteLine();
             Write("Enter Number 1: ");
-            int num1 = int.Parse(ReadLine());
+            int num1;
+            bool parseResults;
+            parseResults = int.TryParse(ReadLine(), out num1);
             WriteLine();
             Write("Enter Number 2: ");
-            var num2 = int.Parse(ReadLine());
+            int num2;
+            parseResults = int.TryParse(ReadLine(), out num2);
             WriteLine();
             string results = (num1 == num2) ? $"{num1} & {num2} are Equal! " : $"{num1} & {num2} are Not Equal!";
+            WriteLine(results);
+            WriteLine();
+            Write("Press Enter to Continue: ");
+            ReadKey();
+            Start();
+        }
+
+        // Positive Or Negative //
+        public static void PositiveOrNegative()
+        {
+            WriteLine();
+            Write("Plese Enter a Positive or Negative number: ");
+            double num1;
+            bool parseResults;
+            parseResults = double.TryParse(ReadLine(), out num1);
+            if (num1 == 0)
+            {
+                WriteLine();
+                WriteLine($"{num1} is neither Positive or Negative! ");
+                WriteLine();
+                Write("Press Enter to Continue: ");
+                ReadKey();
+                Start();
+            }
+            string results = (num1 < 0) ? $"{num1} is a Negative Number!" : $"{num1} is a Positive Number";
+            WriteLine(results);
+            WriteLine();
+            Write("Press Enter to Continue: ");
+            ReadKey();
+            Start();
+        }
+        // Even or Odd //
+
+        public static void EvenOrOdd()
+        {
+            WriteLine();
+            Write("Plese Enter a Number: ");
+            double num1;
+            bool parseResults;
+            parseResults = double.TryParse(ReadLine(), out num1);
+            WriteLine();
+            string results = ((num1 % 2) == 0) ? $"{num1} is Even!!!" : $"{num1} is Odd!!!";
             WriteLine(results);
             WriteLine();
             Write("Press Enter to Continue: ");
