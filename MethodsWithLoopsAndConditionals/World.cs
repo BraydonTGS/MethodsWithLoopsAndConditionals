@@ -15,6 +15,7 @@ namespace MethodsWithLoopsAndConditionals
             WriteLine();
             var user = userName != "" ? userName : "Guest";
             WriteLine($"Welcome {user}!");
+            Thread.Sleep(1000);
             WorldPrintOptions();
 
         }
@@ -54,7 +55,9 @@ namespace MethodsWithLoopsAndConditionals
  |L|o|o|p|s| |&| |C|o|n|d|i|t|i|o|n|a|l|s|
  +-+-+-+-+-+ +-+ +-+-+-+-+-+-+-+-+-+-+-+-+");
                     WriteLine();
-                    WriteLine("Please Enter a Valid Choice! ");
+                    Write("Please Enter a Valid Choice! ");
+                    ReadKey();
+                    WriteLine();
                     WorldPrintOptions();
                     break;
             }

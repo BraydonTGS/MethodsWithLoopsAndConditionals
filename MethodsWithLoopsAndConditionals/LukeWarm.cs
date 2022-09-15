@@ -18,7 +18,11 @@ namespace MethodsWithLoopsAndConditionals
 
         public static void PrintOptions()
         {
-
+            Clear();
+            WriteLine(@" +-+-+-+-+-+-+-+-+
+ |L|u|k|e|W|a|r|m|
+ +-+-+-+-+-+-+-+-+");
+            WriteLine();
             WriteLine("Please Select From The Following Options: ");
             WriteLine();
             WriteLine("> 1. Print Numbers 1000 to -1000: ");
@@ -67,7 +71,9 @@ namespace MethodsWithLoopsAndConditionals
  |L|u|k|e|W|a|r|m|
  +-+-+-+-+-+-+-+-+");
                     WriteLine();
-                    WriteLine("Please Enter a Valid Choice! ");
+                    Write("Please Enter a Valid Choice! ");
+                    ReadKey();
+                    WriteLine();
                     PrintOptions();
                     break;
             }

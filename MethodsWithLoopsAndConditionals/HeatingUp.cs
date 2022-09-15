@@ -16,7 +16,11 @@ namespace MethodsWithLoopsAndConditionals
 
         public static void PrintOptions()
         {
-
+            Clear();
+            WriteLine(@" +-+-+-+-+-+-+-+-+-+
+ |H|e|a|t|i|n|g|U|p|
+ +-+-+-+-+-+-+-+-+-+");
+            WriteLine();
             WriteLine("Please Select From The Following Options: ");
             WriteLine();
             WriteLine("> 1. Range of -10 & 10: ");
@@ -50,7 +54,9 @@ namespace MethodsWithLoopsAndConditionals
  |H|e|a|t|i|n|g|U|p|
  +-+-+-+-+-+-+-+-+-+");
                     WriteLine();
-                    WriteLine("Please Enter a Valid Choice! ");
+                    Write("Please Enter a Valid Choice! ");
+                    ReadKey();
+                    WriteLine();
                     PrintOptions();
                     break;
             }
