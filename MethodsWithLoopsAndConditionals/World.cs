@@ -28,9 +28,9 @@ namespace MethodsWithLoopsAndConditionals
             WriteLine();
             WriteLine("Please Select From The Following Options: ");
             WriteLine();
-            WriteLine("\t> 1. LukeWarm ");
-            WriteLine("\t> 2. HeatingUp ");
-            WriteLine("\t> 3. Exit ");
+            WriteLine("> 1. LukeWarm: ");
+            WriteLine("> 2. HeatingUp: ");
+            WriteLine("> 3. Exit: ");
             UserChoice(ReadLine());
             ReadKey();
         }
@@ -43,6 +43,7 @@ namespace MethodsWithLoopsAndConditionals
                     LukeWarm.Start();
                     break;
                 case "2":
+                    HeatingUp.Start();
                     break;
                 case "3":
                     Environment.Exit(0);

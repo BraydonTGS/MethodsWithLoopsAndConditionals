@@ -21,14 +21,14 @@ namespace MethodsWithLoopsAndConditionals
 
             WriteLine("Please Select From The Following Options: ");
             WriteLine();
-            WriteLine("\t> 1. Print Numbers 1000 to -1000: ");
-            WriteLine("\t> 2. Print Numbers 3 to 999 by 3: ");
-            WriteLine("\t> 3. Equal or Not Equal: ");
-            WriteLine("\t> 4. Positive or Negative ");
-            WriteLine("\t> 5. Even or Odd: ");
-            WriteLine("\t> 6. Can You Vote? ");
-            WriteLine("\t> 7. Go Back ");
-            WriteLine("\t> 8. Exit ");
+            WriteLine("> 1. Print Numbers 1000 to -1000: ");
+            WriteLine("> 2. Print Numbers 3 to 999 by 3: ");
+            WriteLine("> 3. Equal or Not Equal: ");
+            WriteLine("> 4. Positive or Negative: ");
+            WriteLine("> 5. Even or Odd: ");
+            WriteLine("> 6. Can You Vote? ");
+            WriteLine("> 7. Go Back: ");
+            WriteLine("> 8. Exit: ");
             UserChoice(ReadLine());
             ReadKey();
         }
@@ -52,6 +52,7 @@ namespace MethodsWithLoopsAndConditionals
                     EvenOrOdd();
                     break;
                 case "6":
+                    CanYouVote();
                     break;
                 case "7":
                     Clear();
@@ -144,6 +145,7 @@ namespace MethodsWithLoopsAndConditionals
                 ReadKey();
                 Start();
             }
+            WriteLine();
             string results = (num1 < 0) ? $"{num1} is a Negative Number!" : $"{num1} is a Positive Number";
             WriteLine(results);
             WriteLine();
@@ -152,7 +154,6 @@ namespace MethodsWithLoopsAndConditionals
             Start();
         }
         // Even or Odd //
-
         public static void EvenOrOdd()
         {
             WriteLine();
@@ -167,7 +168,23 @@ namespace MethodsWithLoopsAndConditionals
             Write("Press Enter to Continue: ");
             ReadKey();
             Start();
-
+        }
+        // Can You Vote //
+        public static void CanYouVote()
+        {
+            WriteLine();
+            Write("Plese Enter your age: ");
+            double num1;
+            bool parseResults;
+            parseResults = double.TryParse(ReadLine(), out num1);
+            WriteLine();
+            string results = (num1 >= 18) ? "You are old enought to vote!!!" : "You are not old enough to vote";
+            WriteLine(results);
+            WriteLine();
+            WriteLine("Wow! Thats some fast math! ");
+            Write("Press Enter to Continue: ");
+            ReadKey();
+            Start();
         }
     }
 }
