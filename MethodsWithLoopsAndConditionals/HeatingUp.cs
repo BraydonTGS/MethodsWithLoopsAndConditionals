@@ -3,9 +3,7 @@ namespace MethodsWithLoopsAndConditionals
 {
     public class HeatingUp
     {
-        public HeatingUp()
-        {
-        }
+
     }
 }
 

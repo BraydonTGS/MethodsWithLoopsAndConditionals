@@ -15,30 +15,37 @@ namespace MethodsWithLoopsAndConditionals
             WriteLine();
             var user = userName != "" ? userName : "Guest";
             WriteLine($"Welcome {user}!");
-            PrintOptions(user ?? "Guest");
+            WorldPrintOptions();
 
         }
 
-        public static void PrintOptions(string user)
+        public static void WorldPrintOptions()
         {
+            Clear();
+            WriteLine(@" +-+-+-+-+-+ +-+ +-+-+-+-+-+-+-+-+-+-+-+-+
+ |L|o|o|p|s| |&| |C|o|n|d|i|t|i|o|n|a|l|s|
+ +-+-+-+-+-+ +-+ +-+-+-+-+-+-+-+-+-+-+-+-+");
             WriteLine();
             WriteLine("Please Select From The Following Options: ");
+            WriteLine();
             WriteLine("\t> 1. LukeWarm ");
             WriteLine("\t> 2. HeatingUp ");
             WriteLine("\t> 3. Exit ");
-            UserChoice(ReadLine(), user);
+            UserChoice(ReadLine());
             ReadKey();
         }
 
-        public static void UserChoice(string choice, string user)
+        public static void UserChoice(string choice)
         {
             switch (choice)
             {
                 case "1":
+                    LukeWarm.Start();
                     break;
                 case "2":
                     break;
                 case "3":
+                    Environment.Exit(0);
                     break;
                 default:
                     Clear();
@@ -46,8 +53,8 @@ namespace MethodsWithLoopsAndConditionals
  |L|o|o|p|s| |&| |C|o|n|d|i|t|i|o|n|a|l|s|
  +-+-+-+-+-+ +-+ +-+-+-+-+-+-+-+-+-+-+-+-+");
                     WriteLine();
-                    WriteLine($"{user}, Please Enter a Valid Choice! ");
-                    PrintOptions(user);
+                    WriteLine("Please Enter a Valid Choice! ");
+                    WorldPrintOptions();
                     break;
             }
         }
